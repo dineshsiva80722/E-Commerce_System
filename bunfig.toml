@@ -1,0 +1,8 @@
+[install]
+# Use npm for better compatibility with Next.js
+registry = "https://registry.npmjs.org/"
+cache = false
+
+[install.scopes]
+# Trust all scopes for now
+"*" = { registry = "https://registry.npmjs.org/" }

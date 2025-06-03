@@ -8,21 +8,18 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "MongoDB URI is required" }, { status: 400 })
     }
 
-    // In a real deployment, you would save this to environment variables
-    // For this demo, we'll just validate the URI format
+    // Validate the MongoDB URI format
     try {
       new URL(mongodbUri)
     } catch {
       return NextResponse.json({ error: "Invalid MongoDB URI format" }, { status: 400 })
     }
 
-    // Set environment variables in the current process for this session
-    process.env.MONGODB_URI = mongodbUri
-    process.env.NEXT_PUBLIC_HAS_MONGODB = "true"
-
+    // Return success - the actual environment variables should be set through Vercel's environment variables
     return NextResponse.json({
       success: true,
-      message: "MongoDB URI configured successfully",
+      message: "MongoDB URI validated successfully",
+      instructions: "Please configure the MONGODB_URI environment variable in your Vercel project settings"
     })
   } catch (error) {
     console.error("Setup error:", error)

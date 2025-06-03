@@ -11,9 +11,14 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "ShopCraft - Modern E-commerce",
-  description: "Full-featured e-commerce website with CMS dashboard",
-    generator: 'v0.dev'
+  title: "Dezprox E-Commerce System",
+  description: "Dezprox E-Commerce System is a comprehensive E-Commerce system with barcode scanning, inventory management, customer tracking, and detailed sales reports. It is designed to help small to medium-sized supermarkets manage their sales, inventory, and customer data efficiently.",
+    icons:{
+      icon: '/dezproxlogo.png',
+      shortcut: '/dezproxlogo.png',
+      apple: '/dezproxlogo.png',
+    }
+
 }
 
 export default function RootLayout({
